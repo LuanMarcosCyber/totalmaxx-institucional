@@ -15,6 +15,7 @@ import {
   X,
 } from 'lucide-react'
 import BlurText from './components/BlurText'
+import RotatingText from './components/RotatingText.jsx'
 import { CardBody, CardContainer, CardItem } from './components/ui/3d-card'
 
 const products = [
@@ -323,6 +324,23 @@ function Institutional() {
         <div className="institutional-copy reveal">
           <span className="section-label section-label--light"><i /> Parceria de verdade</span>
           <h2>Mais que materiais.<br />Uma base para o seu negócio.</h2>
+          <p className="system-rotating-line">
+            <span>Não é só um sistema, é</span>
+            <RotatingText
+              texts={['controle', 'organização', 'agilidade', 'praticidade']}
+              mainClassName="system-rotating-word"
+              staggerFrom="last"
+              splitBy="characters"
+              initial={{ y: '100%', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: '-120%', opacity: 0 }}
+              staggerDuration={0.025}
+              splitLevelClassName="system-rotating-split"
+              elementLevelClassName="system-rotating-character"
+              transition={{ type: 'spring', damping: 30, stiffness: 400 }}
+              rotationInterval={2700}
+            />
+          </p>
         </div>
         <div className="institutional-side reveal" id="revendedor">
           <p>
@@ -330,7 +348,7 @@ function Institutional() {
             Por isso, unimos variedade, organização e atendimento próximo.
           </p>
           <a href="#contato" className="button button--light">
-            Seja um revendedor <ArrowUpRight size={16} />
+            Acesse o Sistema <ArrowUpRight size={16} />
           </a>
         </div>
         <div className="institutional-footer">
