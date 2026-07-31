@@ -262,7 +262,6 @@ function ProductCard({ product, index }: { product: typeof products[number], ind
       <CardItem translateZ={82} className="product-image">
         <img src={product.image} alt={`${product.name} — ${product.eyebrow}`} style={{ objectPosition: product.position }} loading="lazy" />
         <span className="product-count">0{index + 1}</span>
-        {product.temporary && <span className="temporary-tag">Imagem conceitual</span>}
       </CardItem>
       <div className="product-info">
         <CardItem translateZ={42} className="product-title-layer">
@@ -325,9 +324,9 @@ function Institutional() {
           <span className="section-label section-label--light"><i /> Parceria de verdade</span>
           <h2>Mais que materiais.<br />Uma base para o seu negócio.</h2>
           <p className="system-rotating-line">
-            <span>Não é só um sistema, é</span>
+            <span className="system-rotating-intro">Não é só um sistema, é</span>
             <RotatingText
-              texts={['controle', 'organização', 'agilidade', 'praticidade']}
+              texts={['CONTROLE', 'ORGANIZAÇÃO', 'AGILIDADE', 'PRATICIDADE']}
               mainClassName="system-rotating-word"
               staggerFrom="last"
               splitBy="characters"
